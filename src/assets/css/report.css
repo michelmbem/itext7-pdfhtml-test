@@ -1,0 +1,107 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  font-family: "Segoe UI", Helvetica, sans-serif;
+  font-weight: 12pt;
+}
+
+.container {
+  margin-top: 110px;
+}
+
+.header {
+  font-size: .8em;
+}
+
+h1,
+p,
+table {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr,
+img,
+svg {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.logo > img {
+  width: 150px;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.list-unstyled {
+  list-style-type: none;
+  margin: 0;
+  margin-left: 0;
+  padding: 0;
+  padding-left: 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.datatable {
+  margin-top: 30px;
+}
+
+.datatable > thead > tr > th {
+  background-color: gainsboro;
+  text-align: left;
+}
+
+.datatable > tbody > tr > td {
+  border-bottom: 1px solid black;
+}
+
+.datatable > thead > tr > th,
+.datatable > tbody > tr > td {
+  margin: 0;
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.header tr:not(:last-child) td:not(.logo) {
+  border-bottom: 1px dotted gray;
+}
+
+.header td {
+  margin: 0;
+  padding: 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+@page {
+  margin: 1cm;
+}

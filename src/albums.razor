@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/report.css">
+    <title>@Model.Title</title>
+    <style>
+        @@page {
+            @@bottom-left {
+                content: "Printed on @DateTime.Now.ToShortDateString()";
+            }
+
+            @@bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>@Model.Title</h1>
+
+        @if (!string.IsNullOrWhiteSpace(Model.SubTitle)) {
+            <p class="subtitle">@Model.SubTitle</p>
+        }
+
+        <table class="datatable">
+            <thead>
+                <tr>
+                    <th class="text-right">Id</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+            @{ bool emptyBody = true; }
+            @foreach (var album in Model.Data)
+            {
+                <tr>
+                    <td class="text-right">@album.AlbumId</td>
+                    <td>@album.Title</td>
+                    <td>@album.ArtistName</td>
+                </tr>
+                emptyBody = false;
+            }
+            @if (emptyBody) {
+                <tr>
+                    <td colspan="3" class="text-center">No content available</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
