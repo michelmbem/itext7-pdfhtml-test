@@ -29,18 +29,22 @@
             <thead>
                 <tr>
                     <th class="text-right">Id</th>
-                    <th>Title</th>
-                    <th>Author</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Qty/Unit</th>
+                    <th class="text-right">Unit Price</th>
                 </tr>
             </thead>
             <tbody>
             @{ bool emptyBody = true; }
-            @foreach (var album in Model.Data)
+            @foreach (var product in Model.Data)
             {
                 <tr>
-                    <td class="text-right">@album.AlbumId</td>
-                    <td>@album.Title</td>
-                    <td>@album.ArtistName</td>
+                    <td class="text-right">@product.ProductID</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.CategoryName</td>
+                    <td>@product.QuantityPerUnit</td>
+                    <td class="text-right">@product.UnitPrice.ToString("C")</td>
                 </tr>
                 emptyBody = false;
             }
